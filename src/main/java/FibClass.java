@@ -1,12 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author MoaathAlrajab
- */
 public class FibClass {
 
     public static int fibRec(int n) {
@@ -16,7 +8,7 @@ public class FibClass {
         return fibRec(n - 1) + fibRec(n - 2);
     }
 
-    static int fibIter(int n) {
+    static int fibIter(int n) { /// O(n)
        
         int i, f[] = new int[n + 2]; 
         f[0] =f[1]= 0;
@@ -25,6 +17,13 @@ public class FibClass {
             f[i] = f[i - 1] + f[i - 2];
         
         return f[n];
+        
+       // This is mush slower then the Linear one > O(n)
+       // T(n) = 1+ T(n - 1) + T(n - 2)
+       // = 1 + 2T(n - 1)
+       
+       
+       // O(2^n)
     }
-
 }
+    

@@ -1,12 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author MoaathAlrajab
- */
 public class Problem01 {
     
     public static void func1(int n){
@@ -27,25 +19,37 @@ public class Problem01 {
          System.out.print(" \n x= "+x +" y= "+y);
     
     }
+   
     
-    public static void func2(int n){
-        int k,j,i=n;
+    public static int func2(int n){
+        int k,j,i=n, counter = 0;
         while(i>1){
             j=1;
             while(j<n){
                 k=0;
                 while(k<n){
                     k=k+2;
+                    counter++;
                    
                 }
                 j=j*2;
             }
             i=i/2;
         }
+        return counter;
+
        
     }
+    // O(n/2 * log(n) * log(n))
+    
+   public static void main(String[] args){
+        System.out.println(func2(1024));
+        
+    }
+    
     
    // also discuss T(n) = 3 T(n/4) + n
+   // O(n)
     
     
 }
